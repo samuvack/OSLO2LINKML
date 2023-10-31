@@ -43,7 +43,9 @@ classes:
   Afstamming:
     description: Afstamming
     is_a: Persoonsrelatie
-    slots: []
+    slots:
+    - afstammingsType
+    - datumVanAfstamming
   Ambassade:
     description: Ambassade
     is_a: AdministratiefBeheerder
@@ -94,15 +96,18 @@ classes:
   GeregistreerdPersoon:
     description: GeregistreerdPersoon
     is_a: Persoon
-    slots: []
+    slots:
+    - registratie
   Gezin:
     description: Gezin
     is_a: Organisatie
-    slots: []
+    slots:
+    - gezinsadres
   Gezinsrelatie:
     description: Gezinsrelatie
     is_a: Persoonsrelatie
-    slots: []
+    slots:
+    - gezinsrelatietype
   Herkomst:
     description: Herkomst
     slots:
@@ -119,10 +124,13 @@ classes:
   Inwoner:
     description: Inwoner
     is_a: Inwonerschap
-    slots: []
+    slots:
+    - afwezigheid
+    - voorlopigIngeschreven
   Inwonerschap:
     description: Inwonerschap
-    slots: []
+    slots:
+    - heeftVerblijfplaats
   Nationaliteit:
     description: Nationaliteit
     slots:
@@ -130,7 +138,9 @@ classes:
   Niet-EU:
     description: Niet-EU
     is_a: Vreemdeling
-    slots: []
+    slots:
+    - rechtOpTerugkeer
+    - redenVanAanwezigheid
   Overlijden:
     description: Overlijden
     is_a: Persoonsgebeurtenis
@@ -142,7 +152,26 @@ classes:
   Persoon:
     description: Persoon
     is_a: Agent
-    slots: []
+    slots:
+    - achternaam
+    - adellijke titel
+    - alternatieveNaam
+    - contactinfo
+    - geboortenaam
+    - gebruikteVoornaam
+    - geslacht
+    - patroniem
+    - volledigeNaam
+    - voornaam
+    - heeftBurgerlijkeStaat
+    - heeftGeboorte
+    - isLidVan
+    - isHoofdVan
+    - heeftNationaliteit
+    - heeftOverlijden
+    - inwonerschap
+    - staatburgerschap
+    - heeftRelatieMet
   isDisjoint:
     description: isDisjoint
     slots: []
@@ -220,27 +249,42 @@ classes:
   Nationaliteitscode:
     description: Nationaliteitscode
     slots: []
+  heeftBurgerlijkeStaat:
+    description: heeftBurgerlijkeStaat
+    range: BurgerlijkeStaat
+  heeftGeboorte:
+    description: heeftGeboorte
+    range: Geboorte
   Organisatie:
     description: Organisatie
-    slots: []
+  isLidVan:
+    description: isLidVan
+    range: Gezin
+  isHoofdVan:
+    description: isHoofdVan
+    range: Gezin
+  heeftVerblijfplaats:
+    description: heeftVerblijfplaats
+    range: Verblijfplaats
+  heeftNationaliteit:
+    description: heeftNationaliteit
+    range: Nationaliteit
+  heeftOverlijden:
+    description: heeftOverlijden
+    range: Overlijden
+  inwonerschap:
+    description: inwonerschap
+    range: Jurisdictie
+  staatburgerschap:
+    description: staatburgerschap
+    range: Jurisdictie
   Object:
     description: Object
-    slots: []
   Agent:
     description: Agent
-    slots: []
-  Standplaats:
-    description: Standplaats
-    is_a: Verblijfsobject
-    slots: []
-  Gebouweenheid:
-    description: Gebouweenheid
-    is_a: Verblijfsobject
-    slots: []
-  Ligplaats:
-    description: Ligplaats
-    is_a: Verblijfsobject
-    slots: []
+  heeftRelatieMet:
+    description: heeftRelatieMet
+    range: Persoon
 slots:
   achternaam:
     description: ''

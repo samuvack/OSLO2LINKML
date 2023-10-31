@@ -119,28 +119,33 @@ emit_prefixes:
                 target_class = conn["target"]["model"]["@name"]
                 isNavigable = conn["target"]["modifiers"]["@isNavigable"]
                 role = conn["target"]["role"]
-                test = role.get("@name")
+                relation_name = role.get("@name")
                 if isNavigable == "true":
-                    if test is None:
+                    if relation_name is None:
                         # Add to the slots section as a relationship
-                        linkml['classes'][source_class] = {
+                        linkml['classes'][source_class].update({
                             'description': source_class, #conn["documentation"]["@value"] if "documentation" in conn and "@value" in conn["documentation"] else '',
-                            'is_a': target_class,
-                            'slots' : []
+                            'is_a': target_class
                             #'domain': source_class,
                             #'range': target_class
-                        }
-                        print(target_class)
+                        })
                         if linkml['classes'].get(target_class) is None:
                             linkml['classes'][target_class] = {
                                 # conn["documentation"]["@value"] if "documentation" in conn and "@value" in conn["documentation"] else '',
-                                'description': target_class,
-                                'slots': []
+                                'description': target_class
                                 # 'domain': source_class,
                                 # 'range': target_class
                             }
                     else:
-                        continue
+                        linkml['classes'][relation_name] = {
+                            'description': relation_name,
+                            'range': target_class
+                        }
+                        if 'slots' in linkml['classes'][source_class]:
+                            linkml['classes'][source_class]['slots'].append(relation_name)
+                        else:
+                            linkml['classes'][source_class]['slots'] = [relation_name]
+                        
             except KeyError:
                 # Handle the case where the key doesn't exist
                 continue
