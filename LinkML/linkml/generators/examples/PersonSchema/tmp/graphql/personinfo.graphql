@@ -1,0 +1,18 @@
+type Nationaliteit
+  {
+    nationaliteit: String
+  }
+
+type Person
+  {
+    achternaam: String
+    alternatieveNaam: String
+    contactinfo: String!
+    geboortenaam: String
+    gebruikteVoornaam: String
+    geslacht: String
+    patroniem: String
+    volledigeNaam: String
+    voornaam: String
+  }
+

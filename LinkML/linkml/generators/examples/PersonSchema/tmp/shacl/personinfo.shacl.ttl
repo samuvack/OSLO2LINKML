@@ -1,0 +1,68 @@
+@prefix personinfo: <https://w3id.org/linkml/examples/personinfo> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+personinfo:Nationaliteit a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "" ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path personinfo:nationaliteit ] ;
+    sh:targetClass personinfo:Nationaliteit .
+
+personinfo:Person a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "" ;
+            sh:maxCount 1 ;
+            sh:order 6 ;
+            sh:path personinfo:patroniem ],
+        [ sh:datatype xsd:string ;
+            sh:description "" ;
+            sh:maxCount 1 ;
+            sh:order 8 ;
+            sh:path personinfo:voornaam ],
+        [ sh:datatype xsd:string ;
+            sh:description "" ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path personinfo:geslacht ],
+        [ sh:datatype xsd:string ;
+            sh:description "" ;
+            sh:maxCount 1 ;
+            sh:order 7 ;
+            sh:path personinfo:volledigeNaam ],
+        [ sh:datatype xsd:string ;
+            sh:description "" ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path personinfo:gebruikteVoornaam ],
+        [ sh:datatype xsd:string ;
+            sh:description "" ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path personinfo:alternatieveNaam ],
+        [ sh:datatype xsd:string ;
+            sh:description "" ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path personinfo:geboortenaam ],
+        [ sh:datatype xsd:string ;
+            sh:description "" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 2 ;
+            sh:path personinfo:contactinfo ],
+        [ sh:datatype xsd:string ;
+            sh:description "" ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path personinfo:achternaam ] ;
+    sh:targetClass personinfo:Person .
+

@@ -1,0 +1,37 @@
+id: https://example.org/traffic-measurement-belgium
+name: traffic_measurement_belgium
+title: "Verkeersmeting in België"
+description: "Een semantisch model voor verkeersmetingen in België."
+version: 0.1.0
+
+prefixes:
+  schema: http://schema.org/
+
+default_prefix: schema
+
+classes:
+  Verkeersmeting:
+    description: "Een meting van verkeersgegevens op een specifieke locatie en tijd."
+    slots:
+      - locatie
+      - datum_en_tijd
+      - aantal_voertuigen
+      - gemiddelde_snelheid
+
+slots:
+  locatie:
+    description: "De geografische locatie van de verkeersmeting."
+    range: string
+
+  datum_en_tijd:
+    description: "De datum en tijd waarop de verkeersmeting is uitgevoerd."
+    range: datetime
+
+  aantal_voertuigen:
+    description: "Het totale aantal voertuigen dat tijdens de meting is geregistreerd."
+    range: integer
+
+  gemiddelde_snelheid:
+    description: "De gemiddelde snelheid van voertuigen tijdens de meting."
+    range: float
+

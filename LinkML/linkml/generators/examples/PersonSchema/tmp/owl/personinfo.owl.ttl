@@ -1,0 +1,69 @@
+@prefix linkml: <https://w3id.org/linkml/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix personinfo: <https://w3id.org/linkml/examples/personinfo> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+personinfo:Nationaliteit a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Nationaliteit" ;
+    skos:inScheme personinfo: .
+
+personinfo:Person a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Person" ;
+    skos:inScheme personinfo: .
+
+personinfo:achternaam a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "achternaam" ;
+    skos:inScheme personinfo: .
+
+personinfo:alternatieveNaam a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "alternatieveNaam" ;
+    skos:inScheme personinfo: .
+
+personinfo:contactinfo a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "contactinfo" ;
+    skos:inScheme personinfo: .
+
+personinfo:geboortenaam a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "geboortenaam" ;
+    skos:inScheme personinfo: .
+
+personinfo:gebruikteVoornaam a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "gebruikteVoornaam" ;
+    skos:inScheme personinfo: .
+
+personinfo:geslacht a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "geslacht" ;
+    skos:inScheme personinfo: .
+
+personinfo:nationaliteit a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "nationaliteit" ;
+    skos:inScheme personinfo: .
+
+personinfo:patroniem a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "patroniem" ;
+    skos:inScheme personinfo: .
+
+personinfo:volledigeNaam a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "volledigeNaam" ;
+    skos:inScheme personinfo: .
+
+personinfo:voornaam a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "voornaam" ;
+    skos:inScheme personinfo: .
+
+personinfo: a owl:Ontology ;
+    rdfs:label "personinfo" .
+

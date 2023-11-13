@@ -1,0 +1,70 @@
+{
+    "$defs": {
+        "Nationaliteit": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "nationaliteit": {
+                    "description": "",
+                    "type": "string"
+                }
+            },
+            "title": "Nationaliteit",
+            "type": "object"
+        },
+        "Person": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "achternaam": {
+                    "description": "",
+                    "type": "string"
+                },
+                "alternatieveNaam": {
+                    "description": "",
+                    "type": "string"
+                },
+                "contactinfo": {
+                    "description": "",
+                    "type": "string"
+                },
+                "geboortenaam": {
+                    "description": "",
+                    "type": "string"
+                },
+                "gebruikteVoornaam": {
+                    "description": "",
+                    "type": "string"
+                },
+                "geslacht": {
+                    "description": "",
+                    "type": "string"
+                },
+                "patroniem": {
+                    "description": "",
+                    "type": "string"
+                },
+                "volledigeNaam": {
+                    "description": "",
+                    "type": "string"
+                },
+                "voornaam": {
+                    "description": "",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "contactinfo"
+            ],
+            "title": "Person",
+            "type": "object"
+        }
+    },
+    "$id": "https://w3id.org/linkml/examples/personinfo",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": true,
+    "metamodel_version": "1.7.0",
+    "title": "personinfo",
+    "type": "object",
+    "version": null
+}

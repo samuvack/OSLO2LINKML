@@ -1,0 +1,1 @@
+https://yuml.me/diagram/nofunky;dir:TB/class/[Person|achternaam:string %3F;alternatieveNaam:string %3F;contactinfo:string;geboortenaam:string %3F;gebruikteVoornaam:string %3F;geslacht:string %3F;patroniem:string %3F;volledigeNaam:string %3F;voornaam:string %3F],[Nationaliteit|nationaliteit:string %3F]

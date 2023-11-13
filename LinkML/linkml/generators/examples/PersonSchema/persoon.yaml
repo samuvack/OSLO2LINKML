@@ -1,0 +1,345 @@
+id: https://w3id.org/linkml/examples/personinfo
+name: personinfo
+description: |-
+  Information about people, based on [schema.org](http://schema.org)
+license: https://creativecommons.org/publicdomain/zero/1.0/
+default_curi_maps:
+  - semweb_context
+imports:
+  - linkml:types
+prefixes:
+  personinfo: https://w3id.org/linkml/examples/personinfo/
+  linkml: https://w3id.org/linkml/
+  schema: http://schema.org/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  prov: http://www.w3.org/ns/prov#
+  GSSO: http://purl.obolibrary.org/obo/GSSO_
+  famrel: https://example.org/FamilialRelations#
+  skos: http://www.w3.org/2004/02/skos/core#
+  # DATA PREFIXES
+  P: http://example.org/P/
+  ROR: http://example.org/ror/
+  CODE: http://example.org/code/
+  GEO: http://example.org/geoloc/
+default_prefix: personinfo
+default_range: string
+
+emit_prefixes:
+  - rdf
+  - rdfs
+  - xsd
+  - skos
+
+classes:
+  Persoon:
+    description: Persoon
+    is_a: Agent
+    slots:
+    - achternaam
+    - adellijke titel
+    - alternatieveNaam
+    - contactinfo
+    - geboortenaam
+    - gebruikteVoornaam
+    - geslacht
+    - patroniem
+    - volledigeNaam
+    - voornaam
+    - heeftBurgerlijkeStaat
+    - heeftGeboorte
+    - isLidVan
+    - isHoofdVan
+    - heeftNationaliteit
+    - heeftOverlijden
+    - inwonerschap
+    - staatburgerschap
+    - heeftRelatieMet
+  AdministratiefBeheerder:
+    description: AdministratiefBeheerder
+    slots: []
+  heeftHuidigBeheerder:
+    description: heeftHuidigBeheerder
+    slots: []
+  heeftToekomstigBeheerder:
+    description: heeftToekomstigBeheerder
+    slots: []
+  Afstamming:
+    description: Afstamming
+    is_a: Persoonsrelatie
+    slots:
+    - afstammingsType
+    - datumVanAfstamming
+  Ambassade:
+    description: Ambassade
+    is_a: AdministratiefBeheerder
+    slots: []
+  BinnenlandseDomicilie:
+    description: BinnenlandseDomicilie
+    is_a: Domicilie
+    slots: []
+  null:
+    description: null
+    slots: []
+  BinnenlandsVerklaardeVerblijf:
+    description: BinnenlandsVerklaardeVerblijf
+    is_a: VerklaardVerblijf
+    slots: []
+  BuitenlandseDomicilie:
+    description: BuitenlandseDomicilie
+    is_a: Domicilie
+    slots: []
+  BuitenlandsVerklaardVerblijf:
+    description: BuitenlandsVerklaardVerblijf
+    is_a: VerklaardVerblijf
+    slots: []
+  BurgerlijkeStaat:
+    description: BurgerlijkeStaat
+    slots:
+    - type
+  Domicilie:
+    description: Domicilie
+    is_a: Verblijfplaats
+    slots: []
+  EU:
+    description: EU
+    is_a: Vreemdeling
+    slots: []
+  Geboorte:
+    description: Geboorte
+    is_a: Persoonsgebeurtenis
+    slots: []
+  GeenInwoner:
+    description: GeenInwoner
+    is_a: Inwonerschap
+    slots: []
+  Gemeente:
+    description: Gemeente
+    is_a: AdministratiefBeheerder
+    slots: []
+  GeregistreerdPersoon:
+    description: GeregistreerdPersoon
+    is_a: Persoon
+    slots:
+    - registratie
+  Gezin:
+    description: Gezin
+    is_a: Organisatie
+    slots:
+    - gezinsadres
+  Gezinsrelatie:
+    description: Gezinsrelatie
+    is_a: Persoonsrelatie
+    slots:
+    - gezinsrelatietype
+  Herkomst:
+    description: Herkomst
+    slots:
+    - landVanHerkomst
+    - plaatsVanHerkomst
+  Huisvesting:
+    description: Huisvesting
+    is_a: Persoonsrelatie
+    slots: []
+  Huwelijk:
+    description: Huwelijk
+    is_a: Persoonsrelatie
+    slots: []
+  Inwoner:
+    description: Inwoner
+    is_a: Inwonerschap
+    slots:
+    - afwezigheid
+    - voorlopigIngeschreven
+  Inwonerschap:
+    description: Inwonerschap
+    slots:
+    - heeftVerblijfplaats
+  Nationaliteit:
+    description: Nationaliteit
+    slots:
+    - nationaliteit
+  Niet-EU:
+    description: Niet-EU
+    is_a: Vreemdeling
+    slots:
+    - rechtOpTerugkeer
+    - redenVanAanwezigheid
+  Overlijden:
+    description: Overlijden
+    is_a: Persoonsgebeurtenis
+    slots: []
+  PermanentInwoner:
+    description: PermanentInwoner
+    is_a: Inwoner
+    slots: []
+
+  isDisjoint:
+    description: isDisjoint
+    slots: []
+  heeftStandplaats:
+    description: heeftStandplaats
+    slots: []
+  Persoonsgebeurtenis:
+    description: Persoonsgebeurtenis
+    slots:
+    - datum
+    - land
+    - plaats
+  Persoonsrelatie:
+    description: Persoonsrelatie
+    slots: []
+  ReferentieDomicilie:
+    description: ReferentieDomicilie
+    is_a: Domicilie
+    slots: []
+  Samenwonen:
+    description: Samenwonen
+    is_a: Persoonsrelatie
+    slots: []
+  Staatsburger:
+    description: Staatsburger
+    is_a: Staatsburgerschap
+    slots: []
+  Staatsburgerschap:
+    description: Staatsburgerschap
+    slots: []
+  TijdelijkInwoner:
+    description: TijdelijkInwoner
+    is_a: Inwoner
+    slots: []
+  Verblijfplaats:
+    description: Verblijfplaats
+    slots:
+    - verblijfsadres
+  Verblijfsobject:
+    description: Verblijfsobject
+    slots: []
+  VerklaardVerblijf:
+    description: VerklaardVerblijf
+    is_a: Verblijfplaats
+    slots: []
+  Voogdij:
+    description: Voogdij
+    is_a: Persoonsrelatie
+    slots: []
+  Vreemdeling:
+    description: Vreemdeling
+    is_a: Staatsburgerschap
+    slots: []
+  WettelijkVerblijf:
+    description: WettelijkVerblijf
+    is_a: Verblijfplaats
+    slots: []
+  Afstammingstype:
+    description: Afstammingstype
+    slots: []
+  BurgerlijkeStaatInfo:
+    description: BurgerlijkeStaatInfo
+    slots:
+    - burgerlijkeStaat
+    - plaatsVanBurgerlijkeStaat
+  BurgerlijkeStaatType:
+    description: BurgerlijkeStaatType
+    slots: []
+  Geslacht:
+    description: Geslacht
+    slots: []
+  Gezinsrelatietype:
+    description: Gezinsrelatietype
+    slots: []
+  Nationaliteitscode:
+    description: Nationaliteitscode
+    slots: []
+  Organisatie:
+    description: Organisatie
+  Object:
+    description: Object
+  Agent:
+    description: Agent
+slots:
+  achternaam:
+    description: ''
+  adellijke titel:
+    description: ''
+  afstammingsType:
+    description: ''
+  afwezigheid:
+    description: ''
+  alternatieveNaam:
+    description: ''
+  burgerlijkeStaat:
+    description: ''
+  contactinfo:
+    description: ''
+  datum:
+    description: ''
+  datumVanAfstamming:
+    description: ''
+  geboortenaam:
+    description: ''
+  gebruikteVoornaam:
+    description: ''
+  geslacht:
+    description: ''
+  gezinsadres:
+    description: ''
+  gezinsrelatietype:
+    description: ''
+  heeftBurgerlijkeStaat:
+    description: heeftBurgerlijkeStaat
+    range: BurgerlijkeStaat
+  heeftGeboorte:
+    description: heeftGeboorte
+    range: Geboorte
+  heeftNationaliteit:
+    description: heeftNationaliteit
+    range: Nationaliteit
+  heeftOverlijden:
+    description: heeftOverlijden
+    range: Overlijden
+  heeftRelatieMet:
+    description: heeftRelatieMet
+    range: Persoon
+  heeftVerblijfplaats:
+    description: heeftVerblijfplaats
+    range: Verblijfplaats
+  inwonerschap:
+    description: inwonerschap
+  isHoofdVan:
+    description: isHoofdVan
+    range: Gezin
+  isLidVan:
+    description: isLidVan
+    range: Gezin
+  land:
+    description: ''
+  landVanHerkomst:
+    description: ''
+  nationaliteit:
+    description: ''
+  patroniem:
+    description: ''
+  plaats:
+    description: ''
+  plaatsVanBurgerlijkeStaat:
+    description: ''
+  plaatsVanHerkomst:
+    description: ''
+  rechtOpTerugkeer:
+    description: ''
+  redenVanAanwezigheid:
+    description: ''
+  registratie:
+    description: ''
+  staatburgerschap:
+    description: staatburgerschap
+  type:
+    description: ''
+  verblijfsadres:
+    description: ''
+  volledigeNaam:
+    description: ''
+  voorlopigIngeschreven:
+    description: ''
+  voornaam:
+    description: ''

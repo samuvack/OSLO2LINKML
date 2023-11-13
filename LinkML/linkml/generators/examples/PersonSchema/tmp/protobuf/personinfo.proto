@@ -1,0 +1,16 @@
+message Nationaliteit
+ {
+  string nationaliteit = 0
+ }
+message Person
+ {
+  string achternaam = 0
+  string alternatieveNaam = 0
+  string contactinfo = 0
+  string geboortenaam = 0
+  string gebruikteVoornaam = 0
+  string geslacht = 0
+  string patroniem = 0
+  string volledigeNaam = 0
+  string voornaam = 0
+ }
