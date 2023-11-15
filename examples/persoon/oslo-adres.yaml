@@ -1,0 +1,17 @@
+id: https://data.vlaanderen.be/ns/adres
+prefixes:
+  locn: http://www.w3.org/ns/locn#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+default_prefix: adres
+default_range: string
+imports:
+
+types:
+  AdresVoorstelling:
+    type_uri: locn:Address
+
+slots:
+  gemeentenaam:
+    range: rdf:langString
+    
+

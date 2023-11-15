@@ -1,0 +1,14 @@
+id: http://www.w3.org/ns/person
+prefixes:
+  person: http://www.w3.org/ns/person#
+default_prefix: person
+imports:
+
+
+classes:
+  Person:
+    slots:
+      - residency
+
+slots:
+  residency:

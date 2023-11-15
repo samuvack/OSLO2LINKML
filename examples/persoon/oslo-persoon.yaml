@@ -1,0 +1,34 @@
+id: https://data.vlaanderen.be/ns/persoon
+prefixes:
+  dcterms: http://purl.org/dc/terms/
+  locn: http://www.w3.org/ns/locn#
+  person: http://www.w3.org/ns/person#
+  persoon: https://data.vlaanderen.be/ns/persoon#
+default_prefix: persoon
+default_range: string
+imports:
+  # - ./oslo-adres.yaml
+
+classes:
+  Persoon:
+    class_uri: person:Person
+    slots:
+      - heeftInwonerschap
+  Inwonerschap:
+    slots:
+      - binnenJurisdictie
+      - heeftVerblijfplaats
+  Verblijfplaats:
+    slots:
+      - verblijfsadres
+
+slots:
+  heeftInwonerschap:
+    range: Inwonerschap
+  binnenJurisdictie:
+    range: Jurisdiction
+  heeftVerblijfplaats:
+    range: Verblijfplaats
+  verblijfsadres:
+    range: Address
+
