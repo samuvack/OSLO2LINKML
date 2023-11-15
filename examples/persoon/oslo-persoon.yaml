@@ -26,9 +26,9 @@ slots:
   heeftInwonerschap:
     range: Inwonerschap
   binnenJurisdictie:
-    range: Jurisdiction
+    range: dcterms:Jurisdiction
   heeftVerblijfplaats:
     range: Verblijfplaats
   verblijfsadres:
-    range: Address
+    range: locn:Address
 
